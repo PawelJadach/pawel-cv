@@ -38,6 +38,7 @@ const styles = StyleSheet.create({
     paddingTop: 28,
     paddingBottom: 28,
     paddingHorizontal: 36,
+    lineHeight: 1.25,
   },
   header: {
     flexDirection: "row",
@@ -54,20 +55,20 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 600,
     color: ink,
-    lineHeight: 24,
+    lineHeight: 1.15,
   },
   role: {
     fontSize: 11,
     fontWeight: 600,
     color: violet,
     marginTop: 2,
-    lineHeight: 13,
+    lineHeight: 1.2,
   },
   meta: {
     fontSize: 8.5,
     color: muted,
     marginTop: 3,
-    lineHeight: 11,
+    lineHeight: 1.25,
   },
   headerContacts: {
     alignItems: "flex-end",
@@ -78,7 +79,7 @@ const styles = StyleSheet.create({
     color: muted,
     textDecoration: "none",
     fontSize: 8,
-    lineHeight: 10,
+    lineHeight: 1.25,
   },
   rule: {
     height: 1.5,
@@ -96,11 +97,12 @@ const styles = StyleSheet.create({
     textTransform: "uppercase",
     letterSpacing: 0.7,
     marginBottom: 3,
-    lineHeight: 12,
+    lineHeight: 1.2,
   },
   paragraph: {
+    fontSize: 9,
     marginBottom: 3,
-    lineHeight: 12,
+    lineHeight: 1.25,
   },
   job: {
     marginBottom: 5,
@@ -114,14 +116,14 @@ const styles = StyleSheet.create({
   company: {
     fontSize: 10.5,
     fontWeight: 600,
-    lineHeight: 13,
+    lineHeight: 1.2,
     flexGrow: 1,
     flexShrink: 1,
   },
   period: {
     fontSize: 8,
     color: muted,
-    lineHeight: 11,
+    lineHeight: 1.2,
     textAlign: "right",
   },
   jobRole: {
@@ -130,13 +132,13 @@ const styles = StyleSheet.create({
     color: violet,
     marginTop: 1,
     marginBottom: 1,
-    lineHeight: 11,
+    lineHeight: 1.2,
   },
   tech: {
     fontSize: 8,
     color: muted,
     marginBottom: 2,
-    lineHeight: 10,
+    lineHeight: 1.2,
   },
   bullet: {
     flexDirection: "row",
@@ -147,28 +149,30 @@ const styles = StyleSheet.create({
     color: violet,
     width: 10,
     fontSize: 9,
-    lineHeight: 12,
+    lineHeight: 1.25,
   },
   bulletText: {
     flex: 1,
-    lineHeight: 12,
+    fontSize: 9,
+    lineHeight: 1.25,
   },
   note: {
     fontSize: 8,
     color: muted,
     marginTop: 1,
-    lineHeight: 10,
+    lineHeight: 1.2,
   },
   projectLink: {
     color: violet,
     textDecoration: "none",
     fontSize: 8,
     marginTop: 1,
-    lineHeight: 10,
+    lineHeight: 1.2,
   },
   skillsRow: {
+    fontSize: 9,
     marginBottom: 1,
-    lineHeight: 12,
+    lineHeight: 1.25,
   },
   skillLabel: {
     fontWeight: 600,
@@ -181,7 +185,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   compactLine: {
-    lineHeight: 12,
+    fontSize: 9,
+    lineHeight: 1.25,
   },
 });
 
