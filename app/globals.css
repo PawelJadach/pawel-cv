@@ -1,0 +1,208 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes kenburns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes orb-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(32px, -24px, 0);
+  }
+}
+
+@keyframes orb-drift-alt {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-28px, 18px, 0);
+  }
+}
+
+@keyframes menu-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 6px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes locale-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out both;
+}
+
+.animate-kenburns {
+  animation: kenburns 28s ease-out forwards;
+}
+
+.animate-orb {
+  animation: orb-drift 14s ease-in-out infinite;
+}
+
+.animate-orb-alt {
+  animation: orb-drift-alt 18s ease-in-out infinite;
+}
+
+.animate-menu-in {
+  animation: menu-in 0.18s ease-out both;
+}
+
+.locale-in {
+  animation: locale-in 0.35s ease-out both;
+}
+
+.hero-stagger > * {
+  animation: fade-in-up 0.85s ease-out both;
+}
+
+.hero-stagger > *:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.hero-stagger > *:nth-child(2) {
+  animation-delay: 0.16s;
+}
+.hero-stagger > *:nth-child(3) {
+  animation-delay: 0.28s;
+}
+.hero-stagger > *:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.hero-stagger > *:nth-child(5) {
+  animation-delay: 0.52s;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    transparent 35%,
+    rgb(167 139 250 / 0.08) 50%,
+    transparent 65%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.7s ease;
+  pointer-events: none;
+}
+
+.card-shine:hover::after {
+  transform: translateX(120%);
+}
+
+@media (scripting: none) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-fade-in-up,
+  .animate-kenburns,
+  .animate-orb,
+  .animate-orb-alt,
+  .animate-menu-in,
+  .locale-in,
+  .hero-stagger > *,
+  .reveal,
+  .reveal.is-visible {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .card-shine::after {
+    display: none;
+  }
+}
+
+@media print {
+  html,
+  body {
+    background: white;
+    color: black;
+  }
+}
