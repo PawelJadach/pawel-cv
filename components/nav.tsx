@@ -14,7 +14,6 @@ export function Nav() {
     { href: "#experience", label: t.nav.experience },
     { href: "#projects", label: t.nav.projects },
     { href: "#skills", label: t.nav.skills },
-    { href: "#education", label: t.nav.education },
     { href: "#contact", label: t.nav.contact },
   ];
 

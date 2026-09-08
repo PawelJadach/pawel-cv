@@ -21,16 +21,16 @@ const en = {
     experience: "Experience",
     projects: "Projects",
     skills: "Skills",
-    education: "Education",
     contact: "Contact",
     menu: "Menu",
     close: "Close menu",
   },
   hero: {
     greeting: "Hi, I'm Paweł",
-    title: "Frontend Developer",
+    title: "6+ years of experience as a frontend developer",
+    role: "Frontend Developer",
     availability: "10–20h / week · B2B",
-    lead: "React and Next.js specialist, available for flexible part-time project work. 4+ years in corporate product teams at Empik and InPost.",
+    lead: "React and Next.js specialist, available for flexible part-time project work.",
     cta: "Get in touch",
     download: "Download CV",
     downloadPl: "PDF in Polish",
@@ -39,7 +39,7 @@ const en = {
   about: {
     title: "About",
     paragraphs: [
-      "Frontend Developer (React, Next.js) available for 10–20h/week flexible project work. 4+ years building scalable web applications in corporate environments (Empik, InPost). Comfortable with part-time contracts, async communication, and a self-managed workload. Particularly experienced in authentication systems, performance optimization, and design systems.",
+      "Frontend Developer (React, Next.js) available for 10–20h/week flexible project work. 6+ years building scalable web applications in corporate environments (Empik, InPost). Comfortable with part-time contracts, async communication, and a self-managed workload. Particularly experienced in authentication systems, performance optimization, and design systems.",
       "I design and ship both frontend interfaces and supporting backend systems, with a strong focus on performance, usability, and clean architecture. I use AI tools daily (Cursor, LLMs) for implementation, refactors, and code review — while keeping ownership of architecture and quality.",
     ],
   },
@@ -100,9 +100,51 @@ const en = {
       {
         name: "Trainboard",
         href: "https://trainboard.pl",
-        meta: "Personal project · In progress",
+        meta: "Personal project",
         description:
-          "Personal trainer management platform built with Next.js and PostgreSQL. Full-stack development, from design to deployment.",
+          "Personal trainer platform: public profiles, online bookings, packages, and a trainer dashboard. Next.js, PostgreSQL, Clerk, Stripe.",
+      },
+      {
+        name: "Squared Away",
+        href: "https://squared-away-two.vercel.app",
+        meta: "Personal project",
+        description:
+          "One place to run household, money, and habits. Next.js monorepo with Neon, Clerk, and PWA — including a furnace and pellet tracker.",
+      },
+      {
+        name: "Fighter Portfolio",
+        href: "https://fighter-portfolio-ten.vercel.app",
+        meta: "Personal project",
+        description:
+          "Searchable portfolio of combat-sports athletes: public profiles, fight-ready status, and contact. Next.js, Neon, Clerk.",
+      },
+      {
+        name: "Payflo",
+        href: "https://payflo-alpha.vercel.app",
+        meta: "Personal project",
+        description:
+          "Invoicing SaaS for technical teams. Next.js, Convex, Clerk, and Resend.",
+      },
+      {
+        name: "Suggestly",
+        href: "https://suggestly.vercel.app",
+        meta: "Personal project",
+        description:
+          "Public feedback boards with voting, status workflow, analytics, and Stripe billing. Next.js, Prisma, Clerk.",
+      },
+      {
+        name: "Moja półka",
+        href: "https://book-checklist.vercel.app",
+        meta: "Personal project",
+        description:
+          "Personal bookshelf: reading lists, ratings, and notes. Next.js and Convex.",
+      },
+      {
+        name: "More Water Pls",
+        href: "https://more-water-pls.vercel.app",
+        meta: "Personal project",
+        description:
+          "Hydration tracker with accounts and history. Next.js, Clerk, Supabase.",
       },
     ],
   },
@@ -159,14 +201,6 @@ const en = {
       },
     ],
   },
-  education: {
-    title: "Education",
-    school: "State University of Applied Sciences in Legnica",
-    degree: "Bachelor of Engineering (BEng)",
-    field: "Computer Science",
-    location: "Legnica, Poland",
-    period: "2018 — 2021",
-  },
   workStatus: {
     title: "Work status",
     text: "Registered sole proprietor (B2B). Available for flexible 10–20h/week contracts, async collaboration, and self-managed delivery. Daily AI-assisted workflow (Cursor, LLMs) to ship faster without lowering the quality bar.",
@@ -208,16 +242,16 @@ const pl: typeof en = {
     experience: "Doświadczenie",
     projects: "Projekty",
     skills: "Umiejętności",
-    education: "Edukacja",
     contact: "Kontakt",
     menu: "Menu",
     close: "Zamknij menu",
   },
   hero: {
     greeting: "Cześć, jestem Paweł",
-    title: "Frontend Developer",
+    title: "Ponad 6 lat doświadczenia jako frontend developer",
+    role: "Frontend Developer",
     availability: "10–20h / tydzień · B2B",
-    lead: "Specjalizuję się w React i Next.js. Szukam elastycznej współpracy part-time. Ponad 4 lata w zespołach produktowych Empik i InPost.",
+    lead: "Specjalizuję się w React i Next.js. Szukam elastycznej współpracy part-time.",
     cta: "Napisz do mnie",
     download: "Pobierz CV",
     downloadPl: "PDF po polsku",
@@ -226,7 +260,7 @@ const pl: typeof en = {
   about: {
     title: "O mnie",
     paragraphs: [
-      "Frontend Developer (React, Next.js), dostępny na elastyczną współpracę 10–20h tygodniowo. Ponad 4 lata budowania skalowalnych aplikacji webowych w środowiskach korporacyjnych (Empik, InPost). Dobrze odnajduję się w kontraktach part-time, komunikacji asynchronicznej i samodzielnie zarządzanym zakresie. Szczególnie doświadczony w systemach uwierzytelniania, optymalizacji wydajności i design systemach.",
+      "Frontend Developer (React, Next.js), dostępny na elastyczną współpracę 10–20h tygodniowo. Ponad 6 lat budowania skalowalnych aplikacji webowych w środowiskach korporacyjnych (Empik, InPost). Dobrze odnajduję się w kontraktach part-time, komunikacji asynchronicznej i samodzielnie zarządzanym zakresie. Szczególnie doświadczony w systemach uwierzytelniania, optymalizacji wydajności i design systemach.",
       "Projektuję i wdrażam zarówno interfejsy frontendowe, jak i wspierające systemy backendowe — z naciskiem na wydajność, użyteczność i czystą architekturę. Na co dzień pracuję z narzędziami AI (Cursor, modele językowe) przy implementacji, refaktorach i code review, zachowując odpowiedzialność za architekturę i jakość kodu.",
     ],
   },
@@ -287,9 +321,51 @@ const pl: typeof en = {
       {
         name: "Trainboard",
         href: "https://trainboard.pl",
-        meta: "Projekt własny · W trakcie",
+        meta: "Projekt własny",
         description:
-          "Platforma do zarządzania pracą trenera personalnego, zbudowana w Next.js i PostgreSQL. Full-stack: od projektu po deployment.",
+          "Platforma dla trenerów: publiczne profile, rezerwacje online, pakiety i panel trenera. Next.js, PostgreSQL, Clerk, Stripe.",
+      },
+      {
+        name: "Squared Away",
+        href: "https://squared-away-two.vercel.app",
+        meta: "Projekt własny",
+        description:
+          "Jedno miejsce do ogarniania domu, finansów i nawyków. Next.js, Neon, Clerk, PWA — w tym rejestr pieca i pelletu.",
+      },
+      {
+        name: "Fighter Portfolio",
+        href: "https://fighter-portfolio-ten.vercel.app",
+        meta: "Projekt własny",
+        description:
+          "Portfolio i wyszukiwarka zawodników sportów walki: publiczne profile, status gotowości do walki i kontakt. Next.js, Neon, Clerk.",
+      },
+      {
+        name: "Payflo",
+        href: "https://payflo-alpha.vercel.app",
+        meta: "Projekt własny",
+        description:
+          "SaaS do fakturowania dla zespołów technicznych. Next.js, Convex, Clerk, Resend.",
+      },
+      {
+        name: "Suggestly",
+        href: "https://suggestly.vercel.app",
+        meta: "Projekt własny",
+        description:
+          "Publiczne tablice feedbacku z głosowaniem, statusami, analityką i billingiem Stripe. Next.js, Prisma, Clerk.",
+      },
+      {
+        name: "Moja półka",
+        href: "https://book-checklist.vercel.app",
+        meta: "Projekt własny",
+        description:
+          "Osobista lista książek: status przeczytania, oceny i notatki. Next.js i Convex.",
+      },
+      {
+        name: "More Water Pls",
+        href: "https://more-water-pls.vercel.app",
+        meta: "Projekt własny",
+        description:
+          "Tracker nawodnienia z kontami i historią. Next.js, Clerk, Supabase.",
       },
     ],
   },
@@ -345,14 +421,6 @@ const pl: typeof en = {
         ],
       },
     ],
-  },
-  education: {
-    title: "Edukacja",
-    school: "Państwowa Wyższa Szkoła Zawodowa im. Witelona w Legnicy",
-    degree: "Inżynier (inż.)",
-    field: "Informatyka",
-    location: "Legnica, Polska",
-    period: "2018 — 2021",
   },
   workStatus: {
     title: "Forma współpracy",

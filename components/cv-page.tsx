@@ -203,26 +203,40 @@ export function CvPage() {
               </p>
             </Reveal>
 
-            {t.projects.items.map((project) => (
-              <Reveal key={project.href}>
-                <a
-                  href={project.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="card-shine group block rounded-xl border-2 border-violet-500 bg-zinc-950 p-8 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-violet-400 hover:shadow-xl"
-                >
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <h3 className="text-2xl font-bold text-zinc-50">{project.name}</h3>
-                      <p className="mt-1 text-sm font-medium text-violet-300">{project.meta}</p>
+            <div className="grid gap-6 md:grid-cols-2">
+              {t.projects.items.map((project, index) => (
+                <Reveal key={project.href} delay={index * 0.04}>
+                  <a
+                    href={project.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`card-shine group block h-full rounded-xl bg-zinc-950 p-8 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-violet-400 hover:shadow-xl ${
+                      index === 0
+                        ? "border-2 border-violet-500 md:col-span-2"
+                        : "border border-zinc-800"
+                    }`}
+                  >
+                    <div className="flex items-start justify-between gap-4">
+                      <div>
+                        <h3 className="text-2xl font-bold text-zinc-50">{project.name}</h3>
+                        <p className="mt-1 text-sm font-medium text-violet-300">
+                          {project.meta}
+                        </p>
+                      </div>
+                      <ExternalLinkIcon className="mt-1 h-5 w-5 shrink-0 text-zinc-400 transition-colors group-hover:text-violet-300" />
                     </div>
-                    <ExternalLinkIcon className="mt-1 h-5 w-5 shrink-0 text-zinc-400 transition-colors group-hover:text-violet-300" />
-                  </div>
-                  <p className="mt-4 leading-relaxed text-zinc-400">{project.description}</p>
-                  <p className="mt-3 text-sm text-zinc-500">trainboard.pl</p>
-                </a>
-              </Reveal>
-            ))}
+                    <p className="mt-4 leading-relaxed text-zinc-400">
+                      {project.description}
+                    </p>
+                    <p className="mt-3 text-sm text-zinc-500">
+                      {project.href
+                        .replace(/^https?:\/\//, "")
+                        .replace(/^www\./, "")}
+                    </p>
+                  </a>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -266,27 +280,10 @@ export function CvPage() {
           </div>
         </section>
 
-        <section id="education" className="relative overflow-hidden py-24 sm:py-32">
+        <section className="relative overflow-hidden py-24 sm:py-32">
           <div className="relative z-10 mx-auto max-w-4xl px-6 sm:px-8 lg:px-12">
-            <Reveal className="mb-16 text-center">
-              <h2 className="mb-4 text-4xl font-bold text-zinc-50 sm:text-5xl">
-                {t.education.title}
-              </h2>
-            </Reveal>
             <Reveal>
-              <div className="card-shine rounded-xl border border-zinc-800 bg-zinc-950 p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:border-violet-400 hover:shadow-xl">
-                <h3 className="text-2xl font-bold text-zinc-50">{t.education.school}</h3>
-                <p className="mt-2 text-lg font-semibold text-violet-200/90">
-                  {t.education.degree}
-                </p>
-                <p className="mt-2 text-zinc-400">
-                  {t.education.field} · {t.education.location} · {t.education.period}
-                </p>
-              </div>
-            </Reveal>
-
-            <Reveal delay={0.1}>
-              <div className="card-shine mt-6 rounded-xl border-2 border-violet-500 bg-zinc-950 p-8 text-center shadow-lg">
+              <div className="card-shine rounded-xl border-2 border-violet-500 bg-zinc-950 p-8 text-center shadow-lg">
                 <h3 className="text-2xl font-bold text-zinc-50">{t.workStatus.title}</h3>
                 <p className="mt-3 leading-relaxed text-zinc-400">{t.workStatus.text}</p>
               </div>
