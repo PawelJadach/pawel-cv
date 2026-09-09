@@ -11,16 +11,12 @@ import {
   ArrowIcon,
   CheckIcon,
   ExternalLinkIcon,
-  FacebookIcon,
   GitHubIcon,
-  InstagramIcon,
   LinkedInIcon,
   MailIcon,
   PhoneIcon,
-  PinIcon,
-  WhatsAppIcon,
 } from "@/components/icons";
-import { profile } from "@/lib/cv";
+import { profile, projectDisplayHost } from "@/lib/cv";
 
 const ctaClass =
   "inline-flex items-center justify-center px-8 py-3 text-base sm:text-lg font-semibold tracking-wide text-slate-100 bg-[#201034] hover:bg-[#30164f] border border-violet-900/70 shadow-sm shadow-black/70 hover:shadow-md hover:shadow-violet-950/80 transition-all duration-150 transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-600/80 focus-visible:ring-offset-2 focus-visible:ring-offset-black";
@@ -88,15 +84,12 @@ export function CvPage() {
           <div className="relative z-10 mx-auto w-full max-w-6xl px-6 sm:px-8 lg:translate-y-[-10%] lg:px-12">
             <div key={locale} className="hero-stagger space-y-3 text-center">
               <p className="text-sm font-medium tracking-wide text-violet-300/90 uppercase">
-                {t.contact.location} · {t.hero.availability}
+                {t.hero.title}
               </p>
               <h1 className="text-4xl font-semibold tracking-tight text-slate-100 sm:text-5xl lg:text-6xl">
                 {t.hero.greeting}
               </h1>
-              <p className="text-xl font-semibold text-violet-200/90 sm:text-2xl">
-                {t.hero.title}
-              </p>
-              <p className="mx-auto max-w-3xl text-lg leading-relaxed text-slate-300/80 sm:text-xl">
+              <p className="mx-auto max-w-xl text-lg leading-relaxed text-slate-300/80 sm:text-xl">
                 {t.hero.lead}
               </p>
               <div className="flex flex-col items-center justify-center gap-4 pt-4 sm:flex-row">
@@ -126,12 +119,9 @@ export function CvPage() {
         <section id="experience" className="relative overflow-hidden py-24 sm:py-32">
           <div className="relative z-10 mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
             <Reveal className="mb-16 text-center">
-              <h2 className="mb-4 text-4xl font-bold text-zinc-50 sm:text-5xl">
+              <h2 className="text-4xl font-bold text-zinc-50 sm:text-5xl">
                 {t.experience.title}
               </h2>
-              <p className="mx-auto max-w-2xl text-xl text-zinc-400">
-                {t.experience.subtitle}
-              </p>
             </Reveal>
 
             <div className="mx-auto max-w-4xl space-y-10">
@@ -204,38 +194,35 @@ export function CvPage() {
             </Reveal>
 
             <div className="grid gap-6 md:grid-cols-2">
-              {t.projects.items.map((project, index) => (
-                <Reveal key={project.href} delay={index * 0.04}>
-                  <a
-                    href={project.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`card-shine group block h-full rounded-xl bg-zinc-950 p-8 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-violet-400 hover:shadow-xl ${
-                      index === 0
-                        ? "border-2 border-violet-500 md:col-span-2"
-                        : "border border-zinc-800"
-                    }`}
-                  >
-                    <div className="flex items-start justify-between gap-4">
-                      <div>
+              {t.projects.items.map((project, index) => {
+                const host = projectDisplayHost(project.href);
+
+                return (
+                  <Reveal key={project.href} delay={index * 0.04}>
+                    <a
+                      href={project.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`card-shine group block h-full rounded-xl bg-zinc-950 p-8 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-violet-400 hover:shadow-xl ${
+                        index === 0
+                          ? "border-2 border-violet-500 md:col-span-2"
+                          : "border border-zinc-800"
+                      }`}
+                    >
+                      <div className="flex items-start justify-between gap-4">
                         <h3 className="text-2xl font-bold text-zinc-50">{project.name}</h3>
-                        <p className="mt-1 text-sm font-medium text-violet-300">
-                          {project.meta}
-                        </p>
+                        <ExternalLinkIcon className="mt-1 h-5 w-5 shrink-0 text-zinc-400 transition-colors group-hover:text-violet-300" />
                       </div>
-                      <ExternalLinkIcon className="mt-1 h-5 w-5 shrink-0 text-zinc-400 transition-colors group-hover:text-violet-300" />
-                    </div>
-                    <p className="mt-4 leading-relaxed text-zinc-400">
-                      {project.description}
-                    </p>
-                    <p className="mt-3 text-sm text-zinc-500">
-                      {project.href
-                        .replace(/^https?:\/\//, "")
-                        .replace(/^www\./, "")}
-                    </p>
-                  </a>
-                </Reveal>
-              ))}
+                      <p className="mt-4 leading-relaxed text-zinc-400">
+                        {project.description}
+                      </p>
+                      {host ? (
+                        <p className="mt-3 text-sm text-zinc-500">{host}</p>
+                      ) : null}
+                    </a>
+                  </Reveal>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -331,16 +318,10 @@ export function CvPage() {
 
         <section id="contact" className="relative overflow-hidden py-24 sm:py-32">
           <div className="relative z-10 mx-auto max-w-4xl px-6 sm:px-8 lg:px-12">
-            <Reveal className="mb-16 text-center">
-              <h2 className="mb-4 text-4xl font-bold text-zinc-50 sm:text-5xl">
+            <Reveal className="mb-10 text-center">
+              <h2 className="text-4xl font-bold text-zinc-50 sm:text-5xl">
                 {t.contact.title}
               </h2>
-              <p className="mx-auto max-w-2xl text-xl text-zinc-400">
-                {t.contact.subtitle}
-              </p>
-              <div className="flex justify-center pt-4">
-                <DownloadCv />
-              </div>
             </Reveal>
 
             <Reveal delay={0.2}>
@@ -375,17 +356,6 @@ export function CvPage() {
                       </a>
                     </div>
                   </div>
-                  <div className="group flex items-start gap-4">
-                    <ContactIconBox>
-                      <PinIcon className="h-6 w-6 text-white" />
-                    </ContactIconBox>
-                    <div>
-                      <p className="mb-1 text-sm font-medium text-zinc-400">
-                        {t.contact.locationLabel}
-                      </p>
-                      <p className="text-lg text-zinc-50">{t.contact.location}</p>
-                    </div>
-                  </div>
                 </div>
 
                 <div className="pt-6">
@@ -400,21 +370,6 @@ export function CvPage() {
                       href={profile.linkedin}
                       label="LinkedIn"
                       icon={<LinkedInIcon className="h-5 w-5 text-blue-400" />}
-                    />
-                    <SocialChip
-                      href={profile.instagram}
-                      label="Instagram"
-                      icon={<InstagramIcon className="h-5 w-5 text-pink-400" />}
-                    />
-                    <SocialChip
-                      href={profile.facebook}
-                      label="Facebook"
-                      icon={<FacebookIcon className="h-5 w-5 text-blue-400" />}
-                    />
-                    <SocialChip
-                      href={profile.whatsapp}
-                      label="WhatsApp"
-                      icon={<WhatsAppIcon className="h-5 w-5 text-green-400" />}
                     />
                   </div>
                 </div>
@@ -450,24 +405,6 @@ export function CvPage() {
               aria-label="LinkedIn"
             >
               <LinkedInIcon />
-            </a>
-            <a
-              href={profile.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-zinc-400 transition-all hover:scale-110 hover:text-pink-400"
-              aria-label="Instagram"
-            >
-              <InstagramIcon />
-            </a>
-            <a
-              href={profile.whatsapp}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-zinc-400 transition-all hover:scale-110 hover:text-green-400"
-              aria-label="WhatsApp"
-            >
-              <WhatsAppIcon />
             </a>
           </div>
         </div>

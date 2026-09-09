@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Paweł Jadach — Frontend Developer",
   description:
-    "Frontend Developer (React, Next.js), available 10–20h/week on B2B. Empik, InPost. Wrocław, Poland.",
+    "Frontend Developer (React, Next.js), available 10–20h/week on B2B. Empik, InPost.",
   authors: [{ name: "Paweł Jadach" }],
   robots: "index, follow",
 };

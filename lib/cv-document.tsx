@@ -8,7 +8,7 @@ import {
   Text,
   View,
 } from "@react-pdf/renderer";
-import { content, profile, type Locale } from "@/lib/cv";
+import { content, profile, projectDisplayHost, type Locale } from "@/lib/cv";
 
 Font.register({
   family: "Inter",
@@ -204,9 +204,6 @@ export function CvDocument({ locale }: { locale: Locale }) {
           <View style={styles.headerLeft}>
             <Text style={styles.name}>{profile.name}</Text>
             <Text style={styles.role}>{t.hero.role}</Text>
-            <Text style={styles.meta}>
-              {t.hero.title} · {t.contact.location} · {t.hero.availability}
-            </Text>
           </View>
           <View style={styles.headerContacts}>
             <Link src={`mailto:${profile.email}`} style={styles.contactLink}>
@@ -270,18 +267,21 @@ export function CvDocument({ locale }: { locale: Locale }) {
           <Text style={styles.sectionTitle} minPresenceAhead={36}>
             {t.projects.title}
           </Text>
-          {t.projects.items.map((project) => (
-            <View key={project.href} wrap={false} style={styles.job}>
-              <View style={styles.jobHead}>
+          {t.projects.items.map((project) => {
+            const host = projectDisplayHost(project.href);
+
+            return (
+              <View key={project.href} wrap={false} style={styles.job}>
                 <Text style={styles.company}>{project.name}</Text>
-                <Text style={styles.period}>{project.meta}</Text>
+                <Text style={styles.paragraph}>{project.description}</Text>
+                {host ? (
+                  <Link src={project.href} style={styles.projectLink}>
+                    {host}
+                  </Link>
+                ) : null}
               </View>
-              <Text style={styles.paragraph}>{project.description}</Text>
-              <Link src={project.href} style={styles.projectLink}>
-                {project.href.replace(/^https?:\/\//, "").replace(/^www\./, "")}
-              </Link>
-            </View>
-          ))}
+            );
+          })}
         </View>
 
         <View style={styles.section} wrap={false}>

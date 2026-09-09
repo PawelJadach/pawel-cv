@@ -6,9 +6,6 @@ export const profile = {
   email: "pawel.jadach.96@gmail.com",
   phone: "+48 665 032 847",
   phoneHref: "+48665032847",
-  instagram: "https://www.instagram.com/pawel.jadach.96/",
-  facebook: "https://www.facebook.com/jadach.pawel",
-  whatsapp: "https://wa.me/48665032847",
   github: "https://github.com/paweljadach",
   linkedin: "https://www.linkedin.com/in/paweljadach",
   pdf: "/pawel-jadach.pdf",
@@ -27,10 +24,10 @@ const en = {
   },
   hero: {
     greeting: "Hi, I'm Paweł",
-    title: "6+ years of experience as a frontend developer",
+    title: "Frontend Developer",
     role: "Frontend Developer",
     availability: "10–20h / week · B2B",
-    lead: "React and Next.js specialist, available for flexible part-time project work.",
+    lead: "If your company needs an experienced frontend developer, not full-time — you're in the right place.",
     cta: "Get in touch",
     download: "Download CV",
     downloadPl: "PDF in Polish",
@@ -39,13 +36,13 @@ const en = {
   about: {
     title: "About",
     paragraphs: [
-      "Frontend Developer (React, Next.js) available for 10–20h/week flexible project work. 6+ years building scalable web applications in corporate environments (Empik, InPost). Comfortable with part-time contracts, async communication, and a self-managed workload. Particularly experienced in authentication systems, performance optimization, and design systems.",
-      "I design and ship both frontend interfaces and supporting backend systems, with a strong focus on performance, usability, and clean architecture. I use AI tools daily (Cursor, LLMs) for implementation, refactors, and code review — while keeping ownership of architecture and quality.",
+      "For over 6 years I've been building frontend solutions in React and Next.js, but the path taught me to look at systems as a whole — I got comfortable with backend, databases, and UX.",
+      "I can do more than write code: gather requirements, talk to teams, and ship software that actually solves the problem.",
+      "Day to day I use AI tools — Cursor, Claude, Grok — that speed up my work, and because I know this space I can also advise companies where these tools would actually add value or improve a process.",
     ],
   },
   experience: {
     title: "Experience",
-    subtitle: "Product teams, platforms, and frontend architecture",
     technologies: "Technologies",
     jobs: [
       {
@@ -81,7 +78,7 @@ const en = {
         company: "Connectico",
         role: "Frontend Developer",
         period: "2020 — 2021",
-        location: "Wrocław",
+        location: "",
         technologies: ["React", "Next.js"],
         current: false,
         points: [
@@ -100,49 +97,42 @@ const en = {
       {
         name: "Trainboard",
         href: "https://trainboard.pl",
-        meta: "Personal project",
         description:
           "Personal trainer platform: public profiles, online bookings, packages, and a trainer dashboard. Next.js, PostgreSQL, Clerk, Stripe.",
       },
       {
         name: "Squared Away",
         href: "https://squared-away-two.vercel.app",
-        meta: "Personal project",
         description:
           "One place to run household, money, and habits. Next.js monorepo with Neon, Clerk, and PWA — including a furnace and pellet tracker.",
       },
       {
         name: "Fighter Portfolio",
         href: "https://fighter-portfolio-ten.vercel.app",
-        meta: "Personal project",
         description:
           "Searchable portfolio of combat-sports athletes: public profiles, fight-ready status, and contact. Next.js, Neon, Clerk.",
       },
       {
         name: "Payflo",
         href: "https://payflo-alpha.vercel.app",
-        meta: "Personal project",
         description:
           "Invoicing SaaS for technical teams. Next.js, Convex, Clerk, and Resend.",
       },
       {
         name: "Suggestly",
         href: "https://suggestly.vercel.app",
-        meta: "Personal project",
         description:
           "Public feedback boards with voting, status workflow, analytics, and Stripe billing. Next.js, Prisma, Clerk.",
       },
       {
         name: "Moja półka",
         href: "https://book-checklist.vercel.app",
-        meta: "Personal project",
         description:
           "Personal bookshelf: reading lists, ratings, and notes. Next.js and Convex.",
       },
       {
         name: "More Water Pls",
         href: "https://more-water-pls.vercel.app",
-        meta: "Personal project",
         description:
           "Hydration tracker with accounts and history. Next.js, Clerk, Supabase.",
       },
@@ -202,8 +192,8 @@ const en = {
     ],
   },
   workStatus: {
-    title: "Work status",
-    text: "Registered sole proprietor (B2B). Available for flexible 10–20h/week contracts, async collaboration, and self-managed delivery. Daily AI-assisted workflow (Cursor, LLMs) to ship faster without lowering the quality bar.",
+    title: "How I work",
+    text: "I work B2B — sole proprietor, I invoice. Looking for 10–20 hours a week, not a full-time seat. Remote is fine: you share the context, I take care of the frontend.",
   },
   languages: {
     title: "Languages",
@@ -229,8 +219,6 @@ const en = {
     details: "Contact details",
     email: "Email",
     phone: "Phone",
-    locationLabel: "Location",
-    location: "Wrocław, Poland",
     social: "Online",
   },
 };
@@ -248,10 +236,10 @@ const pl: typeof en = {
   },
   hero: {
     greeting: "Cześć, jestem Paweł",
-    title: "Ponad 6 lat doświadczenia jako frontend developer",
+    title: "Frontend Developer",
     role: "Frontend Developer",
     availability: "10–20h / tydzień · B2B",
-    lead: "Specjalizuję się w React i Next.js. Szukam elastycznej współpracy part-time.",
+    lead: "Jeśli Twoja firma potrzebuje doświadczonego frontend developera, nie na pełen etat — świetnie trafiłeś.",
     cta: "Napisz do mnie",
     download: "Pobierz CV",
     downloadPl: "PDF po polsku",
@@ -260,13 +248,13 @@ const pl: typeof en = {
   about: {
     title: "O mnie",
     paragraphs: [
-      "Frontend Developer (React, Next.js), dostępny na elastyczną współpracę 10–20h tygodniowo. Ponad 6 lat budowania skalowalnych aplikacji webowych w środowiskach korporacyjnych (Empik, InPost). Dobrze odnajduję się w kontraktach part-time, komunikacji asynchronicznej i samodzielnie zarządzanym zakresie. Szczególnie doświadczony w systemach uwierzytelniania, optymalizacji wydajności i design systemach.",
-      "Projektuję i wdrażam zarówno interfejsy frontendowe, jak i wspierające systemy backendowe — z naciskiem na wydajność, użyteczność i czystą architekturę. Na co dzień pracuję z narzędziami AI (Cursor, modele językowe) przy implementacji, refaktorach i code review, zachowując odpowiedzialność za architekturę i jakość kodu.",
+      "Od ponad 6 lat tworzę rozwiązania frontendowe w React i Next.js, ale moja droga nauczyła mnie patrzeć na systemy całościowo — zaznajomiłem się z backendem, bazami danych, UX-em.",
+      "Potrafię nie tylko pisać kod, ale zbierać wymagania, rozmawiać z zespołami i dostarczać oprogramowanie, które realnie rozwiązuje problem.",
+      "W pracy na co dzień wykorzystuję narzędzia AI — Cursor, Claude, Grok — które przyspieszają moją pracę, a jednocześnie dzięki obyciu z tym światem potrafię doradzić firmom, gdzie tego typu narzędzia mogłyby rzeczywiście dodać wartość lub usprawnić jakiś proces.",
     ],
   },
   experience: {
     title: "Doświadczenie",
-    subtitle: "Zespoły produktowe, platformy i architektura frontendu",
     technologies: "Technologie",
     jobs: [
       {
@@ -302,7 +290,7 @@ const pl: typeof en = {
         company: "Connectico",
         role: "Frontend Developer",
         period: "2020 — 2021",
-        location: "Wrocław",
+        location: "",
         technologies: ["React", "Next.js"],
         current: false,
         points: [
@@ -321,49 +309,42 @@ const pl: typeof en = {
       {
         name: "Trainboard",
         href: "https://trainboard.pl",
-        meta: "Projekt własny",
         description:
           "Platforma dla trenerów: publiczne profile, rezerwacje online, pakiety i panel trenera. Next.js, PostgreSQL, Clerk, Stripe.",
       },
       {
         name: "Squared Away",
         href: "https://squared-away-two.vercel.app",
-        meta: "Projekt własny",
         description:
           "Jedno miejsce do ogarniania domu, finansów i nawyków. Next.js, Neon, Clerk, PWA — w tym rejestr pieca i pelletu.",
       },
       {
         name: "Fighter Portfolio",
         href: "https://fighter-portfolio-ten.vercel.app",
-        meta: "Projekt własny",
         description:
           "Portfolio i wyszukiwarka zawodników sportów walki: publiczne profile, status gotowości do walki i kontakt. Next.js, Neon, Clerk.",
       },
       {
         name: "Payflo",
         href: "https://payflo-alpha.vercel.app",
-        meta: "Projekt własny",
         description:
           "SaaS do fakturowania dla zespołów technicznych. Next.js, Convex, Clerk, Resend.",
       },
       {
         name: "Suggestly",
         href: "https://suggestly.vercel.app",
-        meta: "Projekt własny",
         description:
           "Publiczne tablice feedbacku z głosowaniem, statusami, analityką i billingiem Stripe. Next.js, Prisma, Clerk.",
       },
       {
         name: "Moja półka",
         href: "https://book-checklist.vercel.app",
-        meta: "Projekt własny",
         description:
           "Osobista lista książek: status przeczytania, oceny i notatki. Next.js i Convex.",
       },
       {
         name: "More Water Pls",
         href: "https://more-water-pls.vercel.app",
-        meta: "Projekt własny",
         description:
           "Tracker nawodnienia z kontami i historią. Next.js, Clerk, Supabase.",
       },
@@ -424,7 +405,7 @@ const pl: typeof en = {
   },
   workStatus: {
     title: "Forma współpracy",
-    text: "Działalność gospodarcza (B2B). Dostępny do elastycznych kontraktów 10–20h tygodniowo, współpracy asynchronicznej i samodzielnego dowożenia zakresu. Codziennie korzystam z narzędzi AI (Cursor, LLM), żeby dowozić szybciej bez obniżania poprzeczki jakości.",
+    text: "Pracuję na B2B — mam działalność, wystawiam fakturę. Szukam 10–20 godzin tygodniowo, nie pełnego etatu. Zdalnie jest OK: dajecie kontekst, ja ogarniam frontend.",
   },
   languages: {
     title: "Języki",
@@ -450,10 +431,20 @@ const pl: typeof en = {
     details: "Dane kontaktowe",
     email: "Email",
     phone: "Telefon",
-    locationLabel: "Lokalizacja",
-    location: "Wrocław, Polska",
     social: "Online",
   },
 };
 
 export const content = { en, pl } as const;
+
+export function projectDisplayHost(href: string): string | null {
+  try {
+    const { hostname } = new URL(href);
+    if (hostname.endsWith(".vercel.app")) {
+      return null;
+    }
+    return hostname;
+  } catch {
+    return null;
+  }
+}
