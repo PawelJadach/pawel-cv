@@ -129,12 +129,6 @@ const en = {
         description:
           "Personal bookshelf: reading lists, ratings, and notes. Next.js and Convex.",
       },
-      {
-        name: "More Water Pls",
-        href: "https://more-water-pls.vercel.app",
-        description:
-          "Hydration tracker with accounts and history. Next.js, Clerk, Supabase.",
-      },
     ],
   },
   skills: {
@@ -343,12 +337,6 @@ const pl: typeof en = {
         href: "https://book-checklist.vercel.app",
         description:
           "Osobista lista książek: status przeczytania, oceny i notatki. Next.js i Convex.",
-      },
-      {
-        name: "More Water Pls",
-        href: "https://more-water-pls.vercel.app",
-        description:
-          "Tracker nawodnienia z kontami i historią. Next.js, Clerk, Supabase.",
       },
     ],
   },
