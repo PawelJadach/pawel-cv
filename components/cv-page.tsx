@@ -170,9 +170,6 @@ export function CvPage() {
                             </li>
                           ))}
                         </ul>
-                        {"note" in job && job.note ? (
-                          <p className="mt-4 text-sm italic text-zinc-500">{job.note}</p>
-                        ) : null}
                       </div>
                     </div>
                   </article>

@@ -156,12 +156,6 @@ const styles = StyleSheet.create({
     fontSize: 9,
     lineHeight: 1.25,
   },
-  note: {
-    fontSize: 8,
-    color: muted,
-    marginTop: 1,
-    lineHeight: 1.2,
-  },
   projectLink: {
     color: violet,
     textDecoration: "none",
@@ -256,9 +250,6 @@ export function CvDocument({ locale }: { locale: Locale }) {
                   <Text style={styles.bulletText}>{point}</Text>
                 </View>
               ))}
-              {"note" in job && job.note ? (
-                <Text style={styles.note}>{job.note}</Text>
-              ) : null}
             </View>
           ))}
         </View>
