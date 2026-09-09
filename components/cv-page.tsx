@@ -136,11 +136,8 @@ export function CvPage() {
                   >
                     <div className="flex flex-col gap-6 sm:flex-row">
                       <div className="flex justify-start sm:justify-center">
-                        <div className="relative">
-                          <div className="absolute inset-0 rounded-full bg-violet-700 opacity-0 blur-lg transition-opacity duration-300 group-hover:opacity-50" />
-                          <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-violet-700 text-xl font-bold text-white shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-violet-700/50">
-                            {index + 1}
-                          </div>
+                        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-violet-700 text-xl font-bold text-white">
+                          {index + 1}
                         </div>
                       </div>
                       <div className="min-w-0 flex-1">

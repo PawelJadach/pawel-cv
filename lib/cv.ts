@@ -53,11 +53,10 @@ const en = {
         technologies: ["Next.js", "React"],
         current: true,
         points: [
-          "Developed the frontend layer of the centralized authentication platform (OIDC / OAuth2) used across InPost services.",
-          "Built authentication flows used as a WebView inside the mobile application, including Google and Apple sign-in integrations.",
-          "Contributed to a centralized login, registration, and onboarding system used across 15+ InPost services and 5M+ users in 10+ countries.",
+          "I built a centralized login, registration, and onboarding system used across InPost apps.",
+          "I integrated my solution into the InPost mobile app as a WebView.",
           "Developed self-service tools for customers and back-office applications for internal teams.",
-          "Participated in building and maintaining the company Design System, creating reusable UI components and standards.",
+          "Participated in building and maintaining the company Design System.",
         ],
       },
       {
@@ -68,7 +67,7 @@ const en = {
         technologies: ["React", "Next.js", "Angular", "Freemarker"],
         current: false,
         points: [
-          "Migrated a legacy Angular monolith (1M+ monthly users) to a modern microfrontend architecture using React and Next.js, reducing bundle size by ~40% and improving page load times.",
+          "Migrated part of a legacy Angular monolith (1M+ monthly users) to a modern microfrontend architecture using React and Next.js, reducing page load times and improving UX.",
           "Developed and maintained merchant-facing tools and administrative panels for managing platform features and configurations.",
           "Managed application deployment, configuration, and environment setup.",
           "Maintained and refactored parts of the legacy codebase built with Angular and Freemarker, ensuring stability during the transition to modern technologies.",
@@ -133,7 +132,7 @@ const en = {
   },
   skills: {
     title: "Skills",
-    subtitle: "Tools and practices I use every day",
+    subtitle: "Tools I use every day",
     groups: [
       {
         title: "Frontend",
@@ -262,11 +261,10 @@ const pl: typeof en = {
         technologies: ["Next.js", "React"],
         current: true,
         points: [
-          "Rozwinąłem warstwę frontendową scentralizowanej platformy uwierzytelniania (OIDC / OAuth2) używanej w serwisach InPost.",
-          "Zbudowałem przepływy logowania jako WebView w aplikacji mobilnej, w tym integracje Google i Apple Sign-In.",
-          "Współtworzyłem scentralizowany system logowania, rejestracji i onboardingu używany w 15+ serwisach InPost i przez 5M+ użytkowników w 10+ krajach.",
+          "Utworzyłem scentralizowany system logowania, rejestracji i onboardingu używany w aplikacjach InPost.",
+          "Zintegrowałem moje rozwiązanie z aplikacją mobilną InPost jako WebView.",
           "Tworzyłem narzędzia self-service dla klientów oraz aplikacje back-office dla zespołów wewnętrznych.",
-          "Uczestniczyłem w budowie i utrzymaniu firmowego Design Systemu — reużywalne komponenty UI i standardy.",
+          "Uczestniczyłem w budowie i utrzymaniu firmowego Design Systemu.",
         ],
       },
       {
@@ -277,7 +275,7 @@ const pl: typeof en = {
         technologies: ["React", "Next.js", "Angular", "Freemarker"],
         current: false,
         points: [
-          "Zmigrowałem monolityczną aplikację Angular (1M+ użytkowników miesięcznie) do nowoczesnej architektury mikrofrontendowej w React i Next.js, zmniejszając rozmiar bundla o ~40% i skracając czas ładowania stron.",
+          "Zmigrowałem część monolitycznej aplikacji Angular (1M+ użytkowników miesięcznie) do nowoczesnej architektury mikrofrontendowej w React i Next.js, skracając czas ładowania i poprawiając UX.",
           "Rozwijałem i utrzymywałem narzędzia dla merchantów oraz panele administracyjne do zarządzania funkcjami i konfiguracją platformy.",
           "Odpowiadałem za wdrożenia, konfigurację i środowiska aplikacji.",
           "Utrzymywałem i refaktoryzowałem fragmenty legacy codebase w Angular i Freemarker, zapewniając stabilność w trakcie przejścia na nowoczesny stack.",
@@ -342,7 +340,7 @@ const pl: typeof en = {
   },
   skills: {
     title: "Umiejętności",
-    subtitle: "Narzędzia i praktyki, których używam na co dzień",
+    subtitle: "Narzędzia, których używam na co dzień",
     groups: [
       {
         title: "Frontend",
