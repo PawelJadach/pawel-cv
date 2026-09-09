@@ -1,7 +1,8 @@
 import { renderToBuffer } from "@react-pdf/renderer";
 import { NextResponse } from "next/server";
 import { CvDocument } from "@/lib/cv-document";
-import type { Locale } from "@/lib/cv";
+import { cvPdfFilename, parseCvVariant, type Locale } from "@/lib/cv";
+import { isToolsAuthenticated } from "@/lib/tools-auth";
 
 export const runtime = "nodejs";
 
@@ -10,7 +11,7 @@ function isLocale(value: string): value is Locale {
 }
 
 export async function GET(
-  _request: Request,
+  request: Request,
   context: { params: Promise<{ locale: string }> },
 ) {
   const { locale } = await context.params;
@@ -18,8 +19,13 @@ export async function GET(
     return NextResponse.json({ error: "Not found" }, { status: 404 });
   }
 
-  const pdf = await renderToBuffer(<CvDocument locale={locale} />);
-  const filename = `Pawel-Jadach-CV-${locale.toUpperCase()}.pdf`;
+  const variant = parseCvVariant(new URL(request.url).searchParams.get("variant"));
+  if (variant === "fullTime" && !(await isToolsAuthenticated())) {
+    return NextResponse.json({ error: "Not found" }, { status: 404 });
+  }
+
+  const pdf = await renderToBuffer(<CvDocument locale={locale} variant={variant} />);
+  const filename = cvPdfFilename(locale, variant);
 
   return new NextResponse(new Uint8Array(pdf), {
     headers: {

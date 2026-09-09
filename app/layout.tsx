@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next";
 import { LanguageProvider } from "@/components/language-provider";
+import { SiteAnalytics } from "@/components/site-analytics";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -35,7 +35,7 @@ export default function RootLayout({
     >
       <body className="min-h-full bg-background font-sans text-foreground">
         <LanguageProvider>{children}</LanguageProvider>
-        <Analytics />
+        <SiteAnalytics />
       </body>
     </html>
   );

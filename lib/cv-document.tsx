@@ -8,7 +8,13 @@ import {
   Text,
   View,
 } from "@react-pdf/renderer";
-import { content, profile, projectDisplayHost, type Locale } from "@/lib/cv";
+import {
+  getCopy,
+  profile,
+  projectDisplayHost,
+  type CvVariant,
+  type Locale,
+} from "@/lib/cv";
 
 Font.register({
   family: "Inter",
@@ -184,8 +190,14 @@ const styles = StyleSheet.create({
   },
 });
 
-export function CvDocument({ locale }: { locale: Locale }) {
-  const t = content[locale];
+export function CvDocument({
+  locale,
+  variant = "partTime",
+}: {
+  locale: Locale;
+  variant?: CvVariant;
+}) {
+  const t = getCopy(locale, variant);
 
   return (
     <Document
@@ -198,6 +210,9 @@ export function CvDocument({ locale }: { locale: Locale }) {
           <View style={styles.headerLeft}>
             <Text style={styles.name}>{profile.name}</Text>
             <Text style={styles.role}>{t.hero.role}</Text>
+            {variant === "fullTime" ? (
+              <Text style={styles.meta}>{t.hero.availability}</Text>
+            ) : null}
           </View>
           <View style={styles.headerContacts}>
             <Link src={`mailto:${profile.email}`} style={styles.contactLink}>

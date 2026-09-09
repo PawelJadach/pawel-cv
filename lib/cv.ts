@@ -1,4 +1,5 @@
 export type Locale = "pl" | "en";
+export type CvVariant = "partTime" | "fullTime";
 
 export const profile = {
   name: "Paweł Jadach",
@@ -428,6 +429,57 @@ const pl: typeof en = {
 };
 
 export const content = { en, pl } as const;
+
+const fullTime = {
+  en: {
+    hero: {
+      availability: "Full-time",
+      lead: "If your company is looking for an experienced frontend developer for a full-time role — you're in the right place.",
+    },
+    workStatus: {
+      title: "How I work",
+      text: "I'm looking for a full-time role. I work remotely, but meeting in person is fine. I'm most comfortable on my own machine and tools, though I'm flexible about that.",
+    },
+    contact: {
+      subtitle: "Open to full-time roles — let's talk.",
+    },
+  },
+  pl: {
+    hero: {
+      availability: "Pełny etat",
+      lead: "Jeśli Twoja firma szuka doświadczonego frontend developera na pełny etat — świetnie trafiłeś.",
+    },
+    workStatus: {
+      title: "Forma współpracy",
+      text: "Szukam pracy na pełny etat. Pracuję zdalnie, ale spotkania na żywo nie są problemem. Najwygodniej będzie mi na własnym sprzęcie i narzędziach, ale jestem pod tym względem elastyczny.",
+    },
+    contact: {
+      subtitle: "Szukam pracy na pełny etat — napisz.",
+    },
+  },
+} as const;
+
+export function parseCvVariant(value: string | null): CvVariant {
+  return value === "fulltime" || value === "fullTime" ? "fullTime" : "partTime";
+}
+
+export function getCopy(locale: Locale, variant: CvVariant = "partTime"): (typeof content)["en"] {
+  const base = content[locale];
+  if (variant === "partTime") return base;
+
+  const overlay = fullTime[locale];
+  return {
+    ...base,
+    hero: { ...base.hero, ...overlay.hero },
+    workStatus: overlay.workStatus,
+    contact: { ...base.contact, ...overlay.contact },
+  };
+}
+
+export function cvPdfFilename(locale: Locale, variant: CvVariant = "partTime") {
+  const suffix = variant === "fullTime" ? "-Fulltime" : "";
+  return `Pawel-Jadach-CV-${locale.toUpperCase()}${suffix}.pdf`;
+}
 
 export function projectDisplayHost(href: string): string | null {
   try {

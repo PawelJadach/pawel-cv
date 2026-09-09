@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { DownloadIcon } from "./icons";
 import { useLanguage } from "./language-provider";
-import type { Locale } from "@/lib/cv";
+import { cvPdfFilename, type Locale } from "@/lib/cv";
 
 const ghostClass =
   "inline-flex items-center justify-center border border-violet-900/70 bg-transparent px-8 py-3 text-base font-semibold tracking-wide text-slate-100 transition-all duration-150 hover:-translate-y-0.5 hover:bg-[#201034] disabled:opacity-60 sm:text-lg";
@@ -44,7 +44,7 @@ export function DownloadCv() {
       const url = URL.createObjectURL(blob);
       const link = document.createElement("a");
       link.href = url;
-      link.download = `Pawel-Jadach-CV-${locale.toUpperCase()}.pdf`;
+      link.download = cvPdfFilename(locale);
       document.body.appendChild(link);
       link.click();
       link.remove();
